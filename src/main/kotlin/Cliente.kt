@@ -1,20 +1,22 @@
-public class Cliente (nombre: String,acompanantes: String,mesa: String){
+interface ClienteActions{
+ fun ordenar()
+ fun pagar()
+ fun statusPedido()
+}
+public class Cliente (nombre: String,acompanantes: Int,mesa: Int): ClienteActions{
     init {
-        acompanantes.toIntOrNull()
-        if(acompanantes!=null) {
+        if(acompanantes!=null && mesa !=null) {
             println("Comensal creado")
         }
     }
-    fun ordenar(){
+    override fun ordenar(){
 
     }
-    fun agregarAlimentos(){
+    override fun pagar(){
 
     }
-    fun pedirCuenta(){
 
-    }
-    fun pagar(){
-
+    override fun statusPedido() {
+        TODO("Not yet implemented")
     }
 }
